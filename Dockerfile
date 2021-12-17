@@ -28,11 +28,11 @@ COPY . .
 RUN python manage.py collectstatic --noinput
 
 # add and run as non-root user
-RUN useradd appuser
-RUN chown -R appuser:appuser /app
+RUN adduser -D myuser
+
+RUN chown -R myuser:myuser /app
 RUN chmod -R 777 /app/static
-RUN chmod -R 777 /app/staticfiles
-USER appuser
+USER myuser
 
 
 # run gunicorn
