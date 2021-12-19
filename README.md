@@ -1,1 +1,1 @@
-# celery -A proj beat -l info 
+# Tweet Automation App 
